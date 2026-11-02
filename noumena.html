@@ -435,7 +435,7 @@
   /* ---- Noumena bar and log sheet (small screens) ---- */
   .nbar, .sheet-x { display: none; }
   @media (max-width: 1100px) {
-    .screen { bottom: calc(100vh - 100svh + 58px); }
+    .screen, html.embed .screen { bottom: calc(100vh - 100svh + 58px); }   /* clear the bar, embedded too */
     .toast { bottom: calc(100vh - 100svh + 74px); }
     .nbar { display: flex; position: fixed; left: 6px; right: 6px; bottom: calc(100vh - 100svh + 6px); height: 52px; z-index: 4; align-items: center; gap: 10px; padding: 0 8px 0 13px;
       background: linear-gradient(#0d1c30, #091422); border: 1px solid rgba(63, 184, 255, 0.4); border-radius: 10px; cursor: pointer;
@@ -457,7 +457,7 @@
     html.embed.sheet #mission > .panel.right, html.embed.sheet #assets > .panel.right { top: 44px; }
     @keyframes sheet { from { opacity: 0; transform: translateY(24px); } }
     @media (max-height: 500px) {   /* phones in landscape: one line */
-      .screen { bottom: calc(100vh - 100svh + 46px); }
+      .screen, html.embed .screen { bottom: calc(100vh - 100svh + 46px); }
       .nbar { height: 40px; }
       .nb-txt { flex-direction: row; align-items: baseline; gap: 10px; }
       .nb-txt small { flex: none; }

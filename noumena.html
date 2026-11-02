@@ -378,6 +378,8 @@
     #simulation { grid-template-columns: 260px minmax(0, 1fr) 400px; }
     .feedbox { width: 240px; height: 150px; }
   }
+  /* last, after every inset rule: stop above a mobile browser's bottom toolbar (iOS Safari floats it over the page) */
+  .screen { bottom: calc(100vh - 100svh); }
 </style>
 </head>
 <body>

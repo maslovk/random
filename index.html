@@ -209,11 +209,12 @@
   /* Mission control: the flight deck styled after the Orcus ground control station */
   html.flying body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
   .site-header, .fly-intro { transition: opacity 0.4s; }
-  html.flying .site-header, html.flying .fly-intro { opacity: 0; pointer-events: none; }
+  html.flying .site-header, html.flying .fly-intro, html.flying .contact .next { opacity: 0; pointer-events: none; }
   .gcs {
     --g-bg: rgba(8, 13, 23, 0.86); --g-line: rgba(120, 160, 255, 0.16); --g-blue: #5aa2ff; --g-green: #49e08a;
     --g-red: #ff5a5a; --g-amber: #ffb84d; --g-text: #e6edff; --g-dim: rgba(214, 226, 255, 0.55);
     position: fixed; inset: 0; z-index: 6; pointer-events: none; opacity: 0; transition: opacity 0.5s;
+    bottom: calc(100vh - 100svh);   /* stop above a mobile browser's bottom toolbar (iOS Safari floats it over the page) */
     display: grid; gap: 10px; padding: calc(10px + env(safe-area-inset-top, 0px)) 12px calc(10px + env(safe-area-inset-bottom, 0px));
     grid-template-columns: 280px minmax(0, 1fr) 280px; grid-template-rows: 50px minmax(0, 1fr) 236px;
     grid-template-areas: "top top top" "mission view assets" "bottom bottom bottom";
